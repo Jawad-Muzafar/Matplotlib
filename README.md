@@ -1,16 +1,26 @@
-# Data Visualization (Matplotlib Notebooks)
+# Data Visualization (Matplotlib & Seaborn Notebooks)
 
-This repository contains data visualizations created with Matplotlib (and commonly-used Python libraries), including line charts, bar graphs, scatter plots, and customized statistical plots. It is intended for learning, experimentation, and sharing clear graphical representations of data.
+A curated collection of Jupyter Notebooks demonstrating data visualization techniques using Matplotlib and Seaborn. This repository contains practical, well-documented examples useful for learning, teaching, and quick reference.
+
+[Repository on GitHub](https://github.com/Jawad-Muzafar/Data-Visualization-)
+
+---
+
+## Quick overview
+- Languages: Jupyter Notebook
+- Notebooks focused on plotting, styling, and common visualization workflows.
+- Ideal for beginners learning plotting fundamentals and for practitioners looking for ready-to-use plotting recipes.
 
 ---
 
 ## Table of Contents
 - [About](#about)
 - [Notebooks Included](#notebooks-included)
-- [Screenshots / Examples](#screenshots--examples)
+- [Examples / Screenshots](#examples--screenshots)
 - [Requirements](#requirements)
-- [Installation](#installation)
+- [Quick Start](#quick-start)
 - [Usage](#usage)
+- [Best Practices](#best-practices)
 - [How to Contribute](#how-to-contribute)
 - [Project Structure](#project-structure)
 - [License](#license)
@@ -19,139 +29,131 @@ This repository contains data visualizations created with Matplotlib (and common
 ---
 
 ## About
-This collection of Jupyter Notebooks demonstrates common and advanced plotting techniques using Matplotlib, often alongside Pandas and Seaborn for data handling and styling. Each notebook is focused on a particular chart type or visualization pattern, with explanations and runnable code cells so you can learn by example.
+This repository contains clear, runnable Jupyter Notebooks that demonstrate common and advanced plotting techniques with Matplotlib and Seaborn. Each notebook is annotated with explanations and contains runnable cells so you can experiment interactively.
 
 Goals:
-- Provide clear, annotated examples of Matplotlib usage.
-- Showcase plotting best practices (labels, legends, colors, annotations).
-- Offer reusable code snippets for common visualization tasks.
-- Serve as a teaching and reference resource.
+- Teach core plotting concepts and Matplotlib/Seaborn idioms.
+- Provide reusable snippets for common visualization tasks.
+- Demonstrate best practices for labels, legends, colors, and figure layout.
 
 ---
 
 ## Notebooks Included
-(Replace or expand this list with the actual notebook filenames in your repo.)
-- `01-line-charts.ipynb` — Basic and advanced line charts, multiple series, smoothing.
-- `02-bar-graphs.ipynb` — Grouped, stacked, and horizontal bar charts.
-- `03-scatter-plots.ipynb` — Scatter, bubble charts, regression overlays.
-- `04-statistical-plots.ipynb` — Histograms, KDEs, boxplots, violin plots.
-- `05-custom-styles.ipynb` — Custom color maps, themes, and figure layouts.
-- `06-annotations-and-insets.ipynb` — Annotations, highlighting, inset axes.
+The README is kept in sync with the repository contents. Current notebooks:
+
+- `matplotlib.ipynb` — Comprehensive Matplotlib examples: line charts, bar charts, scatter plots, customizing styles, annotations, saving figures, and layout management.
+- `seaborn.ipynb` — Statistical visualizations with Seaborn: distribution plots, relational plots, categorical plots, and integration with pandas DataFrames for exploratory data analysis.
+
+If you add more notebooks, consider updating this list with a short description for each.
 
 ---
 
-## Screenshots / Examples
-Include a few representative images (optional). For example:
+## Examples / Screenshots
+(Optionally add representative images under `assets/` and reference them here.)
 
-![Line chart example](assets/line-chart-example.png)
-![Scatter plot example](assets/scatter-example.png)
-
-Tip: Add visuals under an `assets/` directory and reference them here to make the README more appealing.
+![Example plot](assets/example-plot.png)
 
 ---
 
 ## Requirements
 - Python 3.8+
-- Jupyter Notebook / JupyterLab
+- Jupyter Notebook or JupyterLab
 
-Common Python packages:
+Recommended Python packages (example):
 - matplotlib
+- seaborn
 - pandas
 - numpy
-- seaborn
 - scipy
-- jupyter
 
-You can install the common dependencies via pip or conda as shown below.
+Install quickly with pip (create a `requirements.txt` for reproducibility):
+
+```bash
+pip install jupyter matplotlib seaborn pandas numpy scipy
+```
 
 ---
 
-## Installation
+## Quick Start
+1. Clone the repo:
 
-Using pip:
+```bash
+git clone https://github.com/Jawad-Muzafar/Data-Visualization-.git
+cd Data-Visualization-
+```
+
+2. (Optional) Create and activate a virtual environment:
+
 ```bash
 python -m venv venv
-source venv/bin/activate      # macOS / Linux
-venv\Scripts\activate         # Windows
-pip install -r requirements.txt
+source venv/bin/activate     # macOS / Linux
+venv\Scripts\activate      # Windows
 ```
 
-If you don't have a requirements file, install minimal packages:
+3. Install dependencies and open Jupyter:
+
 ```bash
-pip install jupyter matplotlib pandas numpy seaborn
-```
-
-Using conda:
-```bash
-conda create -n viz python=3.10
-conda activate viz
-conda install jupyter matplotlib pandas numpy seaborn
-```
-
----
-
-## Usage
-
-Open the notebooks with Jupyter:
-```bash
+pip install -r requirements.txt   # if you added requirements.txt
 jupyter notebook
 # or
 jupyter lab
 ```
 
-Then open the desired `.ipynb` file in the browser and run the cells. Each notebook contains explanations and runnable cells; start from the top and proceed cell-by-cell.
+4. Open a notebook (e.g., `matplotlib.ipynb`) and run the cells.
 
-If you prefer to export a static HTML preview:
+---
+
+## Usage notes
+- Run notebooks top-to-bottom to ensure variables and imports are defined in order.
+- Export a notebook to HTML for sharing:
+
 ```bash
-jupyter nbconvert --to html 01-line-charts.ipynb
+jupyter nbconvert --to html matplotlib.ipynb
 ```
 
 ---
 
-## Best Practices & Notes
-- Keep figures reproducible by setting random seeds where needed.
-- Save figures with `plt.savefig(..., dpi=300, bbox_inches='tight')` for publication-quality images.
-- Use meaningful axis labels, titles, and legends for clarity.
-- For large datasets, consider downsampling or using aggregation for faster plotting.
+## Best Practices
+- Set random seeds where needed to make examples reproducible.
+- Save figures for publication with `plt.savefig(..., dpi=300, bbox_inches='tight')`.
+- Use clear axis labels, informative titles, and legends.
+- Keep notebooks focused: prefer small, self-contained examples.
 
 ---
 
 ## How to Contribute
-Contributions are welcome! Suggested workflow:
-1. Fork the repository.
-2. Create a branch: `git checkout -b feature/new-notebook`
-3. Add or improve a notebook, include data or assets if needed.
-4. Add/update the `Notebooks Included` section in README if you add new files.
-5. Open a pull request describing your changes.
+Contributions are welcome!
 
-Guidelines:
-- Keep notebooks focused and well-documented.
-- If adding datasets, prefer small sample data or link to external sources to avoid large repo size.
-- Run notebooks end-to-end before submitting a PR.
+Suggested workflow:
+1. Fork the repository.
+2. Create a new branch for your change.
+3. Add or improve notebooks; if adding data, prefer small sample files or link to external datasets.
+4. Update the `Notebooks Included` section in README if you add new notebooks.
+5. Open a pull request with a clear description of changes and examples.
 
 ---
 
 ## Project Structure
-A suggested structure:
 ```
 .
-├── notebooks/
-│   ├── 01-line-charts.ipynb
-│   ├── 02-bar-graphs.ipynb
-│   └── ...
-├── assets/                # images used in README or notebooks
+├── matplotlib.ipynb
+├── seaborn.ipynb
+├── assets/                # optional images used in README or notebooks
 ├── data/                  # optional small sample datasets
-├── requirements.txt
+├── requirements.txt       # optional, recommended for reproducible installs
 └── README.md
 ```
 
 ---
 
 ## License
-This project can be licensed under the MIT License. If you prefer a different license, update this section accordingly.
+No license file is included in the repository yet. I recommend adding an open-source license such as the MIT License.
+
+If you'd like, I can add an MIT `LICENSE` file for you now.
 
 ---
 
 ## Contact
-Created by Jawad Muzafar.  
-If you have questions or suggestions, open an issue or contact me via my GitHub profile: https://github.com/Jawad-Muzafar
+Created by Jawad Muzafar — https://github.com/Jawad-Muzafar
+
+If you have questions or suggestions, please open an issue or contact me via GitHub.
